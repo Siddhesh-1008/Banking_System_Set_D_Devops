@@ -1,0 +1,7 @@
+## YAML Template.
+---
+services:
+  - type: worker
+    name: banking-system-cloud
+    runtime: docker
+    plan: free
