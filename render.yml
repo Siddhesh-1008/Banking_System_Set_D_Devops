@@ -1,7 +1,8 @@
-## YAML Template.
----
 services:
-  - type: worker
+  - type: web
     name: banking-system-cloud
     runtime: docker
     plan: free
+    envVars:
+      - key: PORT
+        value: 8080
