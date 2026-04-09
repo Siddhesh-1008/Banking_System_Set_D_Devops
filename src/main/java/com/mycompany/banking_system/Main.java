@@ -1,28 +1,29 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.mycompany.banking_system;
 
-/**
- *
- * @author Siddhesh
- */
+// You can keep the import, but we won't use the scanner for the cloud run
 import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
         ATM atm = new ATM();
-        Scanner scanner = new Scanner(System.in);
-       
+        
+        System.out.println("--- Banking System Simulation ---");
+        
         Checkings userAccount = new Checkings("ACC-7742", 2000.0);
-        System.out.print("Enter PIN:- ");
-        int inputPin = scanner.nextInt();
+
+        // --- CHANGE START ---
+        // Instead of waiting for a user, we hardcode the PIN for the simulation
+        int inputPin = 1234; 
+        System.out.println("Simulating PIN entry: " + inputPin);
+        // --- CHANGE END ---
+
         if (atm.validatePin(inputPin)) {
             System.out.println("Access Granted");
             atm.displayOptions();
-           
+            
             System.out.println("\nProcessing Deposit of 450.0...");
             userAccount.cashDeposit(450.0);
+            
             System.out.println("Processing Withdrawal of 1250.0...");
             userAccount.cashWithdrawal(1250.0);
             
@@ -31,6 +32,13 @@ public class Main {
             System.out.println("Error: Access Denied. Check your PIN credentials.");
         }
         
-        scanner.close();
+        System.out.println("Simulation Complete.");
+        while (true) {
+        try {
+            Thread.sleep(Integer.MAX_VALUE); 
+        } catch (InterruptedException e) {
+            break;
+        }
+    }
     }
 }
