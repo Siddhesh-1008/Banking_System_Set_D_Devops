@@ -21,6 +21,7 @@ public class Customer {
         this.emailId = email;
     }
     public void depositOrWithdraw(int amount) {
-        System.out.println("Customer requesting transaction of: " + amount);
+        System.out.println("Customer Requesting Transaction of: " + amount);
+        System.out.println("");
     }
 }
