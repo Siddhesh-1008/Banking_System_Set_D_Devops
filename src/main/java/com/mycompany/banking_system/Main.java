@@ -21,24 +21,28 @@ public class Main {
             System.out.println("Access Granted");
             atm.displayOptions();
             
-            System.out.println("\nProcessing Deposit of 450.0...");
-            userAccount.cashDeposit(450.0);
+            System.out.println("\nProcessing Deposit of 600.0...");
+            userAccount.cashDeposit(600.0);
             
-            System.out.println("Processing Withdrawal of 1250.0...");
+            System.out.println("Processing Withdrawals of 1250.0...");
             userAccount.cashWithdrawal(1250.0);
             
-            System.out.println("\nFinal Account Balance: " + userAccount.getBalance());
+            System.out.println("\nFinal Account Balances : " + userAccount.getBalance());
         } else {
-            System.out.println("Error: Access Denied. Check your PIN credentials.");
+            System.out.println("Error: Access Denied. Check your PIN credentials....");
         }
         
-        System.out.println("Simulation Complete.");
-        while (true) {
-        try {
-            Thread.sleep(Integer.MAX_VALUE); 
-        } catch (InterruptedException e) {
-            break;
-        }
-    }
+        System.out.println("Simulation Completed.");
+        System.out.flush(); // Ensure all output is printed before exit
+        // Removed the infinite loop - app will now exit cleanly
+        // System.out.println("App is staying alive for logs...");
+        // while (true) {
+        //     try {
+        //         Thread.sleep(60000); // Sleep for 1 minute
+        //     } catch (InterruptedException e) {
+        //         break; 
+        //     }
+        // }
+        
     }
 }

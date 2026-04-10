@@ -1,8 +1,7 @@
 services:
   - type: web
-    name: banking-system-cloud
-    runtime: docker
+    name: banking-system
+    env: docker
     plan: free
-    envVars:
-      - key: PORT
-        value: 8080
+    buildCommand: ""
+    startCommand: "java -jar app.jar"
